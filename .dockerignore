@@ -1,0 +1,7 @@
+.git*
+node_modules
+.obsidian
+.trash
+.aider*
+.env
+

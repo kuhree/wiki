@@ -1,0 +1,13 @@
+![[cheapino--keymaps01.jpg]]
+
+![[cheapino--keymaps02.jpg]]
+
+![[cheapino--keymaps03.jpg]]
+
+![[cheapino--keymaps04.jpg]]
+
+![[cheapino--keymaps05.jpg]]
+
+![[cheapino--keymaps06.jpg]]
+
+![[cheapino--keymaps07.jpg]]

@@ -1,0 +1,12 @@
+.obsidian
+<<<<<<< HEAD
+node_modules
+.trash
+.aider*
+.env
+**/_variants
+=======
+.trash
+.aider*
+.env
+>>>>>>> ab2c252 (iititi)
