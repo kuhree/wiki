@@ -2,16 +2,17 @@
 draft: false
 publish: true
 aliases: []
-description: 
 date: 2024-11-22
-updated: 2024-11-24
+updated: 2025-02-09
 tags:
   - tools/quartz
   - tools/obsidian
   - tools/astro
   - post
-banner-alt: 
-banner: 
+up: 
+jump: 
+down: 
+id: building-this-site
 ---
 
 up:: [[index]]
@@ -26,7 +27,7 @@ I've been using [[obsidian]] for the last few years to take personal notes.
 
 I already have an Astro site where some of the [[tags/post]] came from. The rest came from the writing mentioned above.
 
-It something called the [Content Collections](https://docs.astro.build/en/guides/content-collections/). This lets me glob a bunch of files, enforce a structure and all that before the page goes live. Pretttty cool. So I could use that, buttt I'd have to rebuild some of obsidian's features from scratch. A valiant effort, but not one for me right now. I also considered [[svelte]] and [[hugo]]. Which has the same or similar "issues."
+It something called the [Content Collections](https://docs.astro.build/en/guides/content-collections/). This lets me glob a bunch of files, enforce a structure and all that before the page goes live. Pretttty cool. So I could use that, but I'd have to rebuild some of obsidian's features from scratch. A valiant effort, but not one for me right now. I also considered [[svelte]] and [[hugo]]. Which has the same or similar "issues."
 
  You see, another problem is that I use a lot of different computers. Laptops, desktops, phones -- on different [[operating-system]]s, new platforms, across upgrades. A separate Astro site get's hard to to maintain for me in my writing. Another thing to pull and clone and sync. It was all bottled up in my notes and would never be public.
 
@@ -39,8 +40,6 @@ Before we begin, imma be honest, it's a pretty convoluted setup. Overengineered 
 I like docker containers. I can usually just build it locally, throw it on some platform and point a domain at it.
 
 I think text/markdown will last longer than Astro, [[quartz]] or any other generator so separating the content from the build is important.
-
-I WANTO WRITEMOAr.
 
 ## Goals
 
@@ -60,9 +59,9 @@ Embedding the site into my existing vault means I only have to move the file
 
 If I'm in Obsidian, this might look like…
 
-- `CTRL + SHIFT + P` to open the cmd bar/palette/action thing
+- `CTRL + SHIFT + P` to open the cmd palette
 - `move file<Enter>`
-- `Pub<Enter>` move where I need it to go
+- `Pub<Enter>` move the file where I need it to go
 
 ![[building-this-site-1.png|moving a file|512]]
 
@@ -76,16 +75,16 @@ If I'm in Obsidian, this might look like…
 
 ### Git
 
-My main vault isn't even a [[git]] repo. I actually use it a lot more like a user's home directory. I've got a folder for Pictures/Videos, one for Documents, and on an on. I don't feel like managing git and branches and remotes and especially LFS. So I use some file syncing service like [[owncloud]]/[[nextcloud]] or [[syncthing]] instead. Currently, I'm using [[owncloud]]. Nice simple UI, easy to setup, restoring works and conflict resolution is easy. Package on every distro. Hasn't ever let me down in the last year+. Mostly just text files tho.
+My main vault isn't even a [[git]] repo. I actually use it a lot more like a user's home directory. I've got a folder for Pictures/Videos, one for Documents, and on and on. I don't feel like managing git and branches and remotes and especially LFS. So I use some file syncing service like [[owncloud]]/[[nextcloud]] or [[syncthing]] instead. Currently, I'm using ~~[[owncloud]]~~ [[syncthing]]. Nice simple UI, easy to setup, restoring works and conflict resolution is easy. Package on every distro. Hasn't ever let me down in the last ~~year+~~ month. It's mostly just text files.
 
-However, this site, within my vault, _is_ a git repo. But only on my desktop and the `.git/` directory is ignored in owncloud. This lets me edit the file on any other computer and when I get back to my desk…
+However, this site, within my vault, _is_ a git repo. ~~But only on my desktop and the `.git/` directory is ignored in~~. This lets me edit the file on any other computer and deploy from within obsidian.
 
-- `CTRL + SHIFT + P` to open the cmd bar/palette/action thing
+- `CTRL + SHIFT + P` to open the cmd palette
 - `sync<Enter>` add/commit with a default msg/push
 
 > [!info] [Vinzent03/obsidian-git](https://github.com/Vinzent03/obsidian-git) plugin for the [[git]] integration
 
-![[building-this-site-3.png|cyncing the vault|512]]
+![[building-this-site-3.png|syncing the vault|512]]
 
 Or even from another host (given that [[ssh-passwordless]] is setup and the directory/repository exists in a good state):
 
@@ -109,7 +108,7 @@ EOF
 dotpublish desktop "~/path/to/Vault/Public" main remote-commit
 ```
 
-You get the idea…
+I don't actually use this, but you get the idea…
 
 ### CI
 

@@ -3,8 +3,11 @@ draft:
 publish: true
 aliases: []
 date: 2024-12-02
-updated: 2024-12-10
+updated: 2025-02-09
 tags: []
+up: 
+jump: 
+down: 
 ---
 
 I bought a split-keyboard.

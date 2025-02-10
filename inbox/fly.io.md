@@ -1,11 +1,14 @@
 ---
 draft: 
 publish: true
-aliases: 
+aliases: []
 date: 2024-11-24
-updated: 2024-11-25
+updated: 2025-02-09
 tags:
   - tools/flyio
+up: 
+jump: 
+down: 
 ---
 
 ## Launch an app

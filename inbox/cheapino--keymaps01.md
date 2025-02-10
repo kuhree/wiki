@@ -1,3 +1,15 @@
+---
+draft: 
+publish: 
+aliases: []
+date: 2024-12-28
+updated: 2025-02-09
+tags: []
+up: 
+jump: 
+down: 
+---
+
 ![[cheapino--keymaps01.jpg]]
 
 ![[cheapino--keymaps02.jpg]]

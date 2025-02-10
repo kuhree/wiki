@@ -3,10 +3,8 @@
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'public-falling-sun-214'
+app = 'kuhree-wiki'
 primary_region = 'iad'
-
-[build]
 
 [env]
 PORT=8080

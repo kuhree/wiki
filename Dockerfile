@@ -7,7 +7,7 @@ RUN bun install date-fns sharp fluent-ffmpeg --no-save && \
 
 FROM ghcr.io/jackyzha0/quartz:latest AS builder
 WORKDIR /usr/src/app
-COPY quartz.layout.ts quartz.config.ts ./
+COPY .quartz/ ./
 COPY --from=optimizer /usr/src/app/content/ content/
 RUN npx quartz build -d content 
 
@@ -15,3 +15,4 @@ FROM caddy:2.8-alpine AS runner
 ENV PORT=8080
 COPY --from=builder /usr/src/app/public/ /usr/share/caddy/
 RUN /bin/sh -c "printf ':%s {\n    root * /usr/share/caddy\n    try_files {path} {path}.html {path}/ =404\n    file_server\n    encode gzip\n\n    handle_errors {\n        rewrite * /{http.error.status_code}.html\n        file_server\n    }\n}\n' \"$PORT\" > /etc/caddy/Caddyfile && cat /etc/caddy/Caddyfile"
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 CMD curl -f http://localhost:$PORT || exit 1

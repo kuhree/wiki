@@ -1,8 +1,11 @@
 ---
-id: dotfiles
+draft: 
+publish: true
 aliases:
   - dot
   - ~/.config/.dot
+date: 2024-11-24
+updated: 2025-02-09
 tags:
   - tools/zsh
   - tools/tmux
@@ -10,9 +13,10 @@ tags:
   - tools/git
   - tools/docker
   - tools/
-date: "2024-11-24"
-publish: true
-updated: "2024-11-24"
+up: 
+jump: 
+down: 
+id: dotfiles
 ---
 
 up::
@@ -27,7 +31,7 @@ I work on more OSs than I can remember or keep up with.
 
 Scripts are everywhere, hard to manage/update/find and run them when I need to.
 
-I've said "yes" to too many tools and technologies. Now I don't know how anything works, it's all a very serious mess and I'm tired. 
+I've said "yes" to too many tools and technologies. Now I don't know how anything works, it's all a very serious mess and I'm tired.
 
 I actually think it's causing slight psychosis.
 
@@ -48,4 +52,3 @@ Generally, I rely on docker to resolve dependency issues (lately, I've been inte
 ## Operating Systems
 
 ## Programs
-
