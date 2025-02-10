@@ -2,14 +2,23 @@ FROM oven/bun:1-alpine AS optimizer
 WORKDIR /usr/src/app
 COPY . .
 RUN rm -rf .quartz && \
-	bun install date-fns sharp fluent-ffmpeg --no-save && \
+	bun install --no-save date-fns sharp fluent-ffmpeg && \
 	bun run wallls.ts --skipMarkdown --targets "archives,media" && \
-	bun run wallls.ts --targets "gallery" 
+	bun run wallls.ts --targets "gallery" && \
+	rm -rf node_modules package.json
 
-FROM git.littlevibe.net/kuhree/quartz:latest AS builder
+FROM oven/bun:1-slim AS builder 
 WORKDIR /usr/src/app
+COPY .quartz ./
 COPY --from=optimizer /usr/src/app/ /usr/src/app/content/
-RUN npx quartz build -d content 
+RUN bun install --production --frozen-lockfile && \
+	bun quartz build -d content
+
+# Alternative builder
+# FROM git.littlevibe.net/kuhree/quartz:latest AS builder
+# WORKDIR /usr/src/app
+# COPY --from=optimizer /usr/src/app/ /usr/src/app/content/
+# RUN npx quartz build -d content 
 
 FROM caddy:2.8-alpine AS runner
 ENV PORT=8080
