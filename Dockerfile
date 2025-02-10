@@ -1,18 +1,19 @@
-FROM oven/bun:1-alpine AS optimizer 
+FROM oven/bun:1 AS optimizer 
 WORKDIR /usr/src/app
 COPY . content
-RUN bun install date-fns sharp fluent-ffmpeg --no-save && \
+RUN rm -rf content/.quartz && \
+	bun install date-fns sharp fluent-ffmpeg --no-save && \
 	bun --cwd content wallls.ts --skipMarkdown --targets "archives,media" && \
 	bun --cwd content wallls.ts --targets "gallery" 
 
-FROM ghcr.io/jackyzha0/quartz:latest AS builder
+FROM optimizer AS builder
 WORKDIR /usr/src/app
 COPY .quartz/ ./
-COPY --from=optimizer /usr/src/app/content/ content/
-RUN npx quartz build -d content 
+RUN bun install && bun quartz build -d content 
 
 FROM caddy:2.8-alpine AS runner
 ENV PORT=8080
 COPY --from=builder /usr/src/app/public/ /usr/share/caddy/
-RUN /bin/sh -c "printf ':%s {\n    root * /usr/share/caddy\n    try_files {path} {path}.html {path}/ =404\n    file_server\n    encode gzip\n\n    handle_errors {\n        rewrite * /{http.error.status_code}.html\n        file_server\n    }\n}\n' \"$PORT\" > /etc/caddy/Caddyfile && cat /etc/caddy/Caddyfile"
-HEALTHCHECK --interval=30s --timeout=5s --retries=3 CMD curl -f http://localhost:$PORT || exit 1
+COPY Caddyfile /etc/caddy/Caddyfile
+HEALTHCHECK --interval=1m --timeout=5s --retries=3 \
+	CMD wget --no-verbose --tries=1 --spider http://localhost:$PORT || exit 1

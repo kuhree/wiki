@@ -1,0 +1,11 @@
+:{$PORT} {
+    root * /usr/share/caddy
+    try_files {path} {path}.html {path}/ =404
+    file_server
+    encode gzip
+
+    handle_errors {
+        rewrite * /{http.error.status_code}.html
+        file_server
+    }
+}

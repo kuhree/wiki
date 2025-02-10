@@ -1,5 +1,7 @@
-.git*
+.git
+.gitignore
 node_modules
+.quartz/node_modules
 .obsidian
 .trash
 .aider*
