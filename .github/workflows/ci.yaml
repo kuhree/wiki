@@ -2,20 +2,20 @@ name: Pipeline
 
 on:
   push:
-    branches: ["**"]
+    branches: ["main"]
     tags: ["v*"]
   pull_request:
     branches: ["**"]
   workflow_dispatch:
 
 jobs:
-  # test:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #       with:
-  #         fetch-depth: 1
-  #         submodules: recursive
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          submodules: recursive
 
   docker:
     needs: test
