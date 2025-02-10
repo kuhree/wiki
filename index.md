@@ -1,23 +1,18 @@
 ---
-draft: 
+id: index
+aliases: []
+tags: []
+date: "2024-11-22"
 publish: true
 title: Khari (kuhree) Johnson
-aliases: []
-date: 2024-11-22
-updated: 2025-02-09
-tags: []
-up: 
-jump: 
-down: 
-id: index
-banner: 
+updated: "2025-02-09"
 ---
 
 [[about|About]]
-| [[resume|CV]]
 | [[uses|Uses]]
 | [[gallery/|Gallery]]
 | [[projects/|Projects]]
+| [[resume|Résumé]]
 
 ---
 
