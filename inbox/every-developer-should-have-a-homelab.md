@@ -1,10 +1,10 @@
 ---
-draft: 
+draft: true
 publish: 
-aliases: []
+aliases: 
 date: 2025-01-04
-updated: 2025-02-09
-tags: []
+updated: 2025-02-23
+tags: 
 up: 
 jump: 
 down: 
@@ -236,4 +236,4 @@ Once you’ve got a few services humming along and you’re comfortable with you
 - Experimenting with clustering using Kubernetes or other orchestration tools.
 - Diving into advanced networking concepts like VLANs and firewalls.
 
-Your homelab evolves as you do. That’s the beauty of it—it grows with your skills, interests, and ambitions.
+Your homelab evolves as you do. That’s the beauty of it. It grows with your skills, interests, and ambitions.

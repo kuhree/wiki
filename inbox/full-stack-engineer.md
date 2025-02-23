@@ -3,7 +3,7 @@ draft: true
 publish: false
 aliases: []
 date: 2024-12-23
-updated: 2025-02-09
+updated: 2025-02-23
 tags: []
 up: 
 jump: 
@@ -14,7 +14,7 @@ What is a full-stack engineer?
 
 Traditionally, I would say that a full-stack engineer was able to work across the entire software "stack" -- from the code the software is written in to the servers the software is running on.
 
-Today, I would say something different. From watching Google rise, I'm a firm believer that if you change the way we find information, you'll change our behavour and elevate the level of things we work on.
+Today, I would say something different. From watching Google rise, I'm a firm believer that if you change the way we find information, you'll change our behavior and elevate the level of things we work on.
 
 Stone to books, books to webpages, and now AI.
 

@@ -3,7 +3,7 @@ draft: false
 publish: true
 aliases: []
 date: 2024-11-22
-updated: 2025-02-09
+updated: 2025-02-23
 tags:
   - tools/quartz
   - tools/obsidian
@@ -27,9 +27,9 @@ I've been using [[obsidian]] for the last few years to take personal notes.
 
 I already have an Astro site where some of the [[tags/post]] came from. The rest came from the writing mentioned above.
 
-It something called the [Content Collections](https://docs.astro.build/en/guides/content-collections/). This lets me glob a bunch of files, enforce a structure and all that before the page goes live. Pretttty cool. So I could use that, but I'd have to rebuild some of obsidian's features from scratch. A valiant effort, but not one for me right now. I also considered [[svelte]] and [[hugo]]. Which has the same or similar "issues."
+The astro site used the [Content Collections](https://docs.astro.build/en/guides/content-collections/) which let me glob a bunch of files and enforce a structure before building the page into the site. Pretttty cool. So I could use that, but I'd have to rebuild some of obsidian's features from scratch. A valiant effort, but not one for me right now. I also considered [[svelte]] and [[hugo]]. Which has the same or similar "issues."
 
- You see, another problem is that I use a lot of different computers. Laptops, desktops, phones -- on different [[operating-system]]s, new platforms, across upgrades. A separate Astro site get's hard to to maintain for me in my writing. Another thing to pull and clone and sync. It was all bottled up in my notes and would never be public.
+You see, another problem is that I use a lot of different computers. Laptops, desktops, phones -- on different [[operating-system]]s, new platforms, across upgrades. A separate Astro site get's hard to to maintain for me in my writing. Another thing to pull and clone and sync. It was all bottled up in my notes and would never be public.
 
 I have a few specific goals in mind to solve a couple different problems.
 
