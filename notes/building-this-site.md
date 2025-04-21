@@ -132,4 +132,4 @@ Then, with a fairly simple [fly.toml](/fly.toml) and running `flyctl deploy --lo
 
 Once we have the docker image from the [ci](#ci) pipeline. I use [coolify](https://coolify.io) to deploy it locally on like a "staging" server. The `main` branch also get's published to fly.io.
 
-Check out some other ways I've found a use for [[tags/tools/docker]].
+Check out some other ways I've found a use for [[tags/tools/docker|docker]].
