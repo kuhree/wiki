@@ -2,7 +2,7 @@
 draft: 
 aliases: 
 date: 2025-04-26
-updated: 2025-05-02
+updated: 2025-05-04
 tags:
   - post
   - tools/restic
