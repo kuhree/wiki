@@ -2,10 +2,10 @@
 draft: false
 publish: true
 title: about
-aliases: 
+aliases: []
 date: 2024-11-22
-updated: 2025-02-09
-tags: 
+updated: 2025-05-15
+tags: []
 up:
   - "[[legacy]]"
   - "[[goals]]"
@@ -57,7 +57,7 @@ My career began in freelancing and contract work. While this path taught me valu
 
 Today, I focus on:
 
-- Frontend development with [React][react], [TypeScript][ts], and modern web technologies
+- Frontend development [TypeScript][ts], [React][react], and other web technologies
 - Backend systems in [Node.js][node] and [Go][go]
 - Database design with [SQLite][sqlite] and [Postgres][postgres]
 - DevOps practices using [Docker][docker] and [GitHub Actions][gh-actions]
